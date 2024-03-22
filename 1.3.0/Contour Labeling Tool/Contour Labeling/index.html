@@ -1,0 +1,791 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Contour Labeling - MOCHA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#draw-new-contours" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MOCHA" class="md-header__button md-logo" aria-label="MOCHA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOCHA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contour Labeling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../Installation/" class="md-tabs__link">
+      Installation
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Contour Labeling Tool
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MOCHA" class="md-nav__button md-logo" aria-label="MOCHA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MOCHA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Contour Labeling Tool</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Contour Labeling Tool" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Contour Labeling Tool
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Reading/" class="md-nav__link">
+        Data Reading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Image%20Display/" class="md-nav__link">
+        Image Display
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Contour Labeling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Contour Labeling
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#draw-new-contours" class="md-nav__link">
+    Draw new contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-contour-shape" class="md-nav__link">
+    Change contour shape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-contours-or-key-points" class="md-nav__link">
+    Select contours or key points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-existing-contours-or-key-points" class="md-nav__link">
+    Delete existing contours or key points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-key-points-to-existing-contours" class="md-nav__link">
+    Add key points to existing contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expand-or-shrink-contours" class="md-nav__link">
+    Expand or shrink contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-contours" class="md-nav__link">
+    Move contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-and-paste-contours" class="md-nav__link">
+    Copy and paste contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-colors-or-type-names" class="md-nav__link">
+    Change colors or type names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-types" class="md-nav__link">
+    Add new types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-contour-types" class="md-nav__link">
+    Delete contour types
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI%20Prediction/" class="md-nav__link">
+        AI Prediction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Saving/" class="md-nav__link">
+        Data Saving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#draw-new-contours" class="md-nav__link">
+    Draw new contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-contour-shape" class="md-nav__link">
+    Change contour shape
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-contours-or-key-points" class="md-nav__link">
+    Select contours or key points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-existing-contours-or-key-points" class="md-nav__link">
+    Delete existing contours or key points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-key-points-to-existing-contours" class="md-nav__link">
+    Add key points to existing contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expand-or-shrink-contours" class="md-nav__link">
+    Expand or shrink contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-contours" class="md-nav__link">
+    Move contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-and-paste-contours" class="md-nav__link">
+    Copy and paste contours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-colors-or-type-names" class="md-nav__link">
+    Change colors or type names
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-types" class="md-nav__link">
+    Add new types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-contour-types" class="md-nav__link">
+    Delete contour types
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Contour Labeling</h1>
+
+<p>The key function of this software is to label contours on images. Each contour has a type name (such as "Lumen" or "Outer Wall"). Each type of contours has the same color if shown. </p>
+<p>A contour contains a closed curve and several key points (figure below). The curve is determined by the key points through a smooth B-spline curve interpolation. You can control the shape of the contour by controlling those key points, such as moving their locations, adding or deleting key points. </p>
+<p>The tools for contour labeling are in a table (figure below) on the left panel. Each row corresponds to a contour type.</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240213142844.png" width="250" /></p>
+</figure>
+<p>By default, all contours are hidden after opening the software. To show all contours of a certain type, you can check the checkbox in the <em>show</em> column and the row corresponding to that contour type. For example, the status of the checkboxes in the above figure indicates that the "Lumen" and "Outer Wall" contours are shown, while the "Calcification" contours (if exist) are hidden.</p>
+<h2 id="draw-new-contours">Draw new contours</h2>
+<p>To draw a new contour, you can first activate the contour drawing mode by clicking the button in the <em>draw</em> column and the row corresponding to that contour type. The button will become blue, showing the activation status. Another alternative way is to press the number key corresponding to the contour type. For example, to activate drawing "Lumen" contours, just press <span class="keys"><kbd class="key-1">1</kbd></span>. </p>
+<p>Once the drawing mode is activated, you can click a location in a image sequence window to add a key point. Click multiple times to add multiple keypoints.</p>
+<p>Once you think the newly added keypoints are sufficient, click the previous button in the <em>draw</em> column, or press the number key again to deactivate the drawing mode. A curve will be automatically generated to represented the contour based on the keypoints. </p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240213144629.png" width="250" /></p>
+</figure>
+<p>The pipeline "activate drawing mode" - "add key points" - "deactivate drawing mode" will generate one single contour. 
+If you want to draw another contour, then perform this pipeline again. </p>
+<div class="admonition note">
+<p class="admonition-title">Same contour for all image sequences</p>
+<p>If you draw a contour on one sequence, after finishing drawing, the same contour will appear on all sequence. This is similar to 2D CASCADE. This  implies you are drawing contours based on all the sequences. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Minimum number of key points</p>
+<p>You need to add at least three key points in order to generate a contour. If the number of newly added key points is less than 3 when you deactivate the drawing mode, all key points will be removed and no contour will be generated.  </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Drawing mode is exclusive for one contour type</p>
+<p>The drawing mode can only be activated for one single contour type at the same time. If you have activated the drawing mode for type 1 (e.g., "Lumen"), and then activate the drawing mode for type 2 (e.g., "Outer Wall"), the drawing mode for type 1 will be automatically deactivated, and any key points you have added after activating the drawing mode for type 1 will be used to generate a contour of type 1. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Automatically showing contours after activating drawing mode</p>
+<p>If you activate drawing mode for type 1 contour, and  you haven't checked the checkbox in the <em>show</em> column for type 1, then this checkbox will automatically be checked and all existing type 1 contours will show. The logic here is that you cannot draw a type 1 contour if you have hidden type 1. </p>
+<p>In contrast, if you uncheck a checkbox in the <em>draw</em> column before you deactivate the drawing mode for the same contour type, the drawing mode will be automatically deactivated, and a new contour will be generated (if there are more than three newly added key points) and then hidden.</p>
+</div>
+<h2 id="change-contour-shape">Change contour shape</h2>
+<p>You can drag a key point on a contour in an image sequence window, and then the shape of the contour curve will change accordingly in real time in all image sequence windows. This is useful to adjust the shape of an existing contour, without deleting it and drawing a new one.</p>
+<h2 id="select-contours-or-key-points">Select contours or key points</h2>
+<p>You can click on an existing contour (but not on a key point) to select that contour. The selected contours are highlighted with a white color and a slightly thicker width. </p>
+<p>You can click on a key point to select it. The selected key points are highlighted with a white color.</p>
+<p>You cannot select a contours and a key point at the same time. </p>
+<h2 id="delete-existing-contours-or-key-points">Delete existing contours or key points</h2>
+<p>To delete an existing contour, just select it and then press <span class="keys"><kbd class="key-delete">Del</kbd></span>. The contour curve and key points will be removed and this operation cannot be undone. </p>
+<p>To delete an existing key point, just select it and then press <span class="keys"><kbd class="key-delete">Del</kbd></span>. The selected key points will be removed, and the contour curve will be regenerated  based on the rest of the key points. This is useful if you think the key points are too many. </p>
+<h2 id="add-key-points-to-existing-contours">Add key points to existing contours</h2>
+<p>You can add a key point to an existing contour, by <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + clicking  any location on the contour. A key point will be added at that location, and the contour curve will be regenerated based on all key points (including the new one). </p>
+<h2 id="expand-or-shrink-contours">Expand or shrink contours</h2>
+<p>You can spatially expand or shrink selected contours by pressing the keys <span class="keys"><kbd class="key-equal">=</kbd></span> or <span class="keys"><kbd class="key-minus">-</kbd></span>. All the key points will move along the normal vectors of the contour accordingly. </p>
+<h2 id="move-contours">Move contours</h2>
+<p>You can spatially translate selected contours by pressing the arrow keys <span class="keys"><kbd class="key-arrow-up">Up</kbd></span>, <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>, <span class="keys"><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-arrow-right">Right</kbd></span>.</p>
+<h2 id="copy-and-paste-contours">Copy and paste contours</h2>
+<p>You can copy selected contours by <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-c">C</kbd></span>. You can then navigate to another slice, and paste those contours by  <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-v">V</kbd></span>. Note that if there exists the same contour, then pasting will not perform. </p>
+<h2 id="change-colors-or-type-names">Change colors or type names</h2>
+<p>You can click a color block in the <em>color</em> column to change the color of the corresponding contour type in a prompt window. You can also double-click a table cell in the <em>type</em> column to change the corresponding contour type name. Note that you cannot change it to a name that has been used by another contour type (a prompt window will show this information if you try to do that).</p>
+<h2 id="add-new-types">Add new types</h2>
+<p>You can add a new contour type. To do so, in the menubar click <em>Contour</em> &rarr; <em>Add New Type</em>, then a new row will appear in the contour table. The default name of the new contour type is "tmp*", you may change the name and the color to make it fit the need.</p>
+<h2 id="delete-contour-types">Delete contour types</h2>
+<p>You can delete a contour type from the contour table, and in this way, all the existing contours (no matter whether they are visible) of this type will be deleted. To do so, just click the corresponding row in the table to select the row, then in the menubar click <em>Contour</em> &rarr; <em>Delete Selected Types</em>, then click <em>yes</em> in the prompt window.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do NOT delete the default contour types.</p>
+<p>There are some default contour types defined by 2D CASCADE. They will all appear in the contour table, even if there is no corresponding contour labels on the opened images. </p>
+<p>To avoid potential confilcts and bugs occured by CASCADE, the following things are not recommended:</p>
+<ul>
+<li>Delete a default contour type.</li>
+<li>Add a new contour type with a name similar to the name of a default contour type.</li>
+<li>Change the color of a default contour type.</li>
+</ul>
+<p>The default types are: 'Lumen', 'Outer Wall', 'Calcification', 'Necrotic/Lipid Core', 'Loose Matrix', 'Type I Hemorrhage', 'Type II Hemorrhage', 'Ulcer', 'Thrombus', 'Other Types', 'Fibrous', 'Fibrous - CA', 'Fibrous - LM', 'Lipid Accumulation', 'Hemorrhage Out Core', 'ECA Lumen': '187', 'ECA Wall', 'Shoulder', 'Muscle', 'Vesselwall Centerline'.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The operation of deleting a contour type cannot be undone. All information of the contour type will be lost, including the shape and position of each contour and the color and name of the contour type. If you regret after deleting a contour type, then you need to close the software without saving to prevent the results from being saved. </p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Image%20Display/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Image Display" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Image Display
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../AI%20Prediction/" class="md-footer__link md-footer__link--next" aria-label="Next: AI Prediction" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              AI Prediction
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
