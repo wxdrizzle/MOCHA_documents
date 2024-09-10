@@ -1,0 +1,1199 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../View%20Image%20and%20Centerlines/">
+      
+      
+        <link rel="next" href="../Label%20Centerline%20Types/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Modify Centerline Locations - MOCHA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hover-and-select" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MOCHA" class="md-header__button md-logo" aria-label="MOCHA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MOCHA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modify Centerline Locations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Installation/" class="md-tabs__link">
+        
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../MOCHA%20Viewer/" class="md-tabs__link">
+          
+  
+    
+  
+  MOCHA Viewer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Vessel Voyager
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MOCHA" class="md-nav__button md-logo" aria-label="MOCHA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MOCHA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../MOCHA%20Viewer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MOCHA Viewer
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            MOCHA Viewer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Data%20Reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Reading
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Image%20Display/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Display
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Contour%20Labeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contour Labeling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/AI%20Prediction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Prediction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Data%20Saving/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Saving
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Vessel Voyager
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Vessel Voyager
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Open%20and%20Save/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open and Save
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../View%20Image%20and%20Centerlines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    View Image and Centerlines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Modify Centerline Locations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Modify Centerline Locations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hover-and-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover and select
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hover and select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hover-over-a-centerline-key-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover over a centerline key point
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-centerline-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select centerline key points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hover-over-a-centerline-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover over a centerline curve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-centerline-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select centerline curves
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-sectional-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-sectional window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-a-key-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move a key point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-key-point-on-a-centerline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a new key point on a centerline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete key points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-a-centerline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Split a centerline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-centerlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add new centerlines
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Label%20Centerline%20Types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Label Centerline Types
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hover-and-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover and select
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hover and select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hover-over-a-centerline-key-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover over a centerline key point
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-centerline-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select centerline key points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hover-over-a-centerline-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hover over a centerline curve
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-centerline-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select centerline curves
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-sectional-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-sectional window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-a-key-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move a key point
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-key-point-on-a-centerline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a new key point on a centerline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-key-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete key points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-a-centerline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Split a centerline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-centerlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add new centerlines
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Modify Centerline Locations</h1>
+
+<h2 id="hover-and-select">Hover and select</h2>
+<p>Since each centerline contains two parts: a curve and several key points, the mouse hovering and selecting also work for them separately. </p>
+<p>Since a key point is usually very close to a location on the curve, the software need to know whether you want to hover over the key point or the curve, if the mouse is around the key point. The button "Selection Priority" on the left panel is for this purpose:</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240909212912.png" width="300" /></p>
+</figure>
+<p>By default, the priority of key point is larger than the curve. In this mode, if the mouse is close to both a key point and a curve, then the key point will be hovered. In this mode, the button is in blue (as shown above), and the text is "Ｏ &gt; ～", where "Ｏ" means "key points", "～"
+means "curve", and "&gt;" means "larger than". </p>
+<p>The other mode is that the priority of curve is larger than key points. In this mode, if the mouse is close to both a key point and a curve, then the curve will be hovered. In this mode, the button is in orange (as shown below), and the text is "～ &gt; Ｏ".</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240909213348.png" width="300" /></p>
+</figure>
+<p>To switch between the two modes, click the button or press <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-d">D</kbd></span>. </p>
+<h3 id="hover-over-a-centerline-key-point">Hover over a centerline key point</h3>
+<p>If a key point is hovered, the point will be highlighted in a relatively bright white color: </p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240909211801.png" width="300" /></p>
+</figure>
+<h3 id="select-centerline-key-points">Select centerline key points</h3>
+<p>If a key point is hovered, left-click to select it. Other things that are previously selected will be deselected at the same time. If only one key point is selected, press <span class="keys"><kbd class="key-minus">-</kbd></span> or <span class="keys"><kbd class="key-equal">=</kbd></span> to switch the selection to the previous or next key point of the same centerline.</p>
+<p>To select multiple key points one by one, press and hold <span class="keys"><kbd class="key-control">Ctrl</kbd></span> , then hover over a key point and left-click. This is the same as selecting multiple files. During this procedure, if you left-click on a selected key point, it will be deselected. </p>
+<p>To select multiple key points, you can also draw a region. Before doing this, first make sure the selection priority of key points is larger than curve (the button "Selection Priority" should be in blue). Press and hold <span class="keys"><kbd class="key-control">Ctrl</kbd></span>, then drag the mouse. This will draw a region based on the mouse trajectory, and select all the key points inside the region:</p>
+<figure>
+<p><img alt="" src="../attachments/Sep-09-2024%2022-22-09.gif" width="500" /></p>
+</figure>
+<p>The selected key points will be shown in a very bright white color (brighter than hovered key point). </p>
+<h3 id="hover-over-a-centerline-curve">Hover over a centerline curve</h3>
+<p>If a curve is hovered, the curve will be highlighted in a relatively bright white color, and the specific hovered location on the curve will be shown as a red point (smaller than centerline key points). </p>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2011-50-55.gif" width="400" /></p>
+</figure>
+<p>Sometimes multiple centerlines are close to each other, and you may find the hovered location or hovered centerline curve is not what you want. Then you can press <span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-space">Space</kbd></span> to change the hovered location to another centerline location that is close to the mouse. You can confirm the change by the red point location or the highlighted curve. </p>
+<h3 id="select-centerline-curves">Select centerline curves</h3>
+<p>If a centerline curve is hovered, left-click to select it. Other things that are previously selected will be deselected at the same time. </p>
+<p>To select multiple centerline curves one by one, press and hold <span class="keys"><kbd class="key-control">Ctrl</kbd></span> , then hover over a curve and left-click. This is the same as selecting multiple files. During this procedure, if you left-click on a selected curve, it will be deselected. </p>
+<p>To select multiple curves, you can also draw a region. Before doing this, first make sure the selection priority of curve is larger than key points (the button "Selection Priority" should be in orange). Press and hold <span class="keys"><kbd class="key-control">Ctrl</kbd></span>, then drag the mouse. This will draw a region based on the mouse trajectory, and select all the curves inside the region:</p>
+<figure>
+<p><img alt="" src="../attachments/Sep-09-2024%2022-20-04.gif" width="500" /></p>
+</figure>
+<p>The selected curves will be shown in a very bright white color (brighter than hovered curve). </p>
+<h2 id="cross-sectional-window">Cross-sectional window</h2>
+<p>The cross-sectional window is shown on the left panel. If a key point is selected, the cross-sectional image, which goes through this point and is perpendicular to the centerline curve that contains the point, will be shown in the window:</p>
+<p><img alt="" src="../attachments/Sep-09-2024%2022-24-22.gif" /></p>
+<p>A semi-transparent blue square will be shown in the 3D window to indicate the cross-sectional plane. </p>
+<p>In the cross-sectional window, if the mouse is outside the window, then a red crosshair will be shown to indicate the center of the cross-section (corresponding to the intersection point of the centerline curve and the cross-section). You can use it to quickly check whether the centerline location is at the lumen center. </p>
+<p>In the cross-sectional window, if the mouse is inside the window, then a blue crosshair and a blue circle will be shown to indicate the mouse position. This is helpful for moving the selected key point, which will be explained in the following section. </p>
+<p>If no key point is selected, then the cross-section is for the hovered key point or hovered centerline curve location (indicated by a red point, as mentioned before). If multiple key points are selected, then no cross-section will be shown.</p>
+<h2 id="move-a-key-point">Move a key point</h2>
+<p>To move a key point to a new location, first you need to select it and only it. Then, there are two ways to change its location.</p>
+<p>The first way is to use the cross-sectional window. This way is useful if you notice that a key point is not at the lumen center and want to move it to the center. </p>
+<ol>
+<li>Move the mouse to the desired location on the cross-sectional image.</li>
+<li>If the lumen is too small or too large, you can zoom in/out by scrolling up/down to make lumen boundary better match the blue circle. </li>
+<li>If the lumen is too large such that the cross-section only contains part of the lumen, you can click the button "+" in the upper right corner of the cross-sectional window to increase its coverage; similarly, click the button "-" to decrease the coverage. </li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd></span> + click. The selected key point will be moved to the 3D location that corresponds to the clicked 2D location of the cross-section. </li>
+</ol>
+<p>The blue cross-sectional plane in the 3D window and the 2D image in the cross-sectional window will be both updated immediately to reflect the key point location change. </p>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2011-56-57.gif" width="500" /></p>
+</figure>
+<p>The second way is to use casted ray. This way is useful if the key point is far away from the lumen, such that the cross-sectional image does not even contain the lumen. </p>
+<ol>
+<li>Select only the key point. </li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd></span> + click on the location you want the key point to move to in the 3D window.</li>
+<li>Rotate the 3D image to observe the vessel from another direction, then you will see a cyan straight line that goes through the key point's new location. This line is the ray casted from the 2D mouse clicking location on the screen toward the 3D image. The ray is perpendicular to the screen. The location on the ray with the max image intensity is automatically calculated as the new key point location. By observing the vessel from another direction, you can determine whether the max intensity location on the casted ray is the location (lumen center) you want. </li>
+<li>If the new location of max intensity is still not what you want, then press and hold <span class="keys"><kbd class="key-shift">Shift</kbd></span>, and move the mouse around the casted ray. The hovered location on the ray will be indicated by a small white point.</li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd></span> + click to change the key point location to the hovered location on the ray. </li>
+</ol>
+<p>Therefore, by two clicks plus a dragging, you can move a key point to any 3D location you want in the 3D window. Note that click other places without dragging will make the ray disappear.  </p>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2011-58-55.gif" width="500" /></p>
+</figure>
+<h2 id="add-a-new-key-point-on-a-centerline">Add a new key point on a centerline</h2>
+<p>You can add a new key point to an existing centerline. This is useful if you find the key point spacing is too large such that the centerline shape does not match the vessel shape correctly. </p>
+<ol>
+<li>Hover a centerline curve, such that a red point is shown to indicate the hovered location on the curve. </li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-a">A</kbd></span> to add a key point at the hovered location. </li>
+</ol>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2012-00-24.gif" width="500" /></p>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Not applicable for non-key-point-based centerlines</p>
+<p>If the centerline is not key-point-based, then you cannot add a new key point. This is because in this situation, the centerline is determined by dense point locations rather than interpolation based on key points, and each centerline only have two fake key points at the two endpoints. This will happen if the opened file is an SWC file, or a YAML file that was saved directly using an SWC file's centerline information. The function of converting such centerlines to key-point-based will be implemented in the future. </p>
+</div>
+<h2 id="delete-key-points">Delete key points</h2>
+<p>You can delete key points of existing centerlines. This is useful if you find the key point spacing is too small such that the centerline shape is weird (caused by improper interpolation), or you have multiple centerlines share one key point (e.g., the bifurcation point) and you want to disconnect these centerlines. </p>
+<ol>
+<li>Select the key points you want to delete.</li>
+<li>Press <span class="keys"><kbd class="key-delete">Del</kbd></span> or <span class="keys"><kbd class="key-backspace">Backspace</kbd></span>. </li>
+</ol>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2012-01-38.gif" width="500" /></p>
+</figure>
+<p>Alternatively, you can right-click a hovered key point to delete it. </p>
+<p>Note that if after deleting, a centerline only has one key point, then that key point and the entire centerline will also be deleted. If a deleted key point is shared by multiple centerlines, then the key point will be deleted for all those centerlines. </p>
+<h2 id="split-a-centerline">Split a centerline</h2>
+<p>You can split a centerline into two centerlines that share a key point at the split location. This is useful if you find the centerline actually contains two arteries, and you want to label two types. It is also useful if you want to change a centerline into two separate centerlines that does not share a key point at the split location, such that you can modify them separately (just delete the key point at the split location after splitting).</p>
+<ol>
+<li>Hover a centerline curve , such that a red point is shown to indicate the hovered location on the curve. </li>
+<li><span class="keys"><kbd class="key-shift">Shift</kbd></span> + <span class="keys"><kbd class="key-s">S</kbd></span> to split the centerline into two. A new key point will be added at the split location and shared by the two centerlines. </li>
+</ol>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2012-02-50.gif" width="500" /></p>
+</figure>
+<h2 id="add-new-centerlines">Add new centerlines</h2>
+<p>To create new centerlines, first click the button "Add Points" on the left panel to enter the add-point mode. The hotkey is <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + +a+.</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020240909230455.png" width="300" /></p>
+</figure>
+<p>Then, click the locations that you want to add key points at in the 3D window, following the order from one endpoint to the other endpoint of the centerline to create. the newly added key points will be shown in white. </p>
+<p>You can also select existing key points in the add-point mode if you want the new centerline to be connected to existing centerlines. </p>
+<p>If you click a location by mistake, you can undo the clicking by <span class="keys"><kbd class="key-control">Ctrl</kbd></span> + <span class="keys"><kbd class="key-z">Z</kbd></span>. </p>
+<p>Then exist the add-point mode by clicking the button or pressing the hotkey again. New centerlines will be created based on the new key points you add and the existing key points you selected. </p>
+<p><img alt="" src="../attachments/Sep-09-2024%2023-22-57.gif" /></p>
+<p>In the add-point mode, after clicking a new location to add a new key point, you can drag the image to observe the vessel from another direction, then the casted ray will be shown and you can change the newly added key point location in the same way as mentioned in the section "Move a key point" above. In short, <span class="keys"><kbd class="key-shift">Shift</kbd></span> + click to change the location to the hovered location on the casted ray, as shown below:</p>
+<figure>
+<p><img alt="" src="../attachments/Sep-10-2024%2012-21-38.gif" width="600" /></p>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Pay attention to the order of clicking</p>
+<p>New centerlines will be created based on the order of your clicks on new locations and existing key points.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Existing centerlines may be automatically split</p>
+<p>During the add-point mode, if you clicked some existing key points that are not the endpoints of existing centerlines, then those existing centerlines will be split into several centerlines based on the clicked key points. This is because the software defines individual centerlines by bifurcations. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">You can form a loop</p>
+<ul>
+<li>You cannot consecutively click the same location (the key point will disappear or deselected).</li>
+<li>Still, you can click the same location as long as you do not click it twice consecutively. Therefore, you can create a centerline loop. This is useful, for example, for tracing the centerline of circle of Willis.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
