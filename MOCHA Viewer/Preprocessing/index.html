@@ -12,7 +12,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../Image%20Display/">
+        <link rel="next" href="../Patient%20Folder%20Reading/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Data Reading - MOCHA</title>
+        <title>Preprocessing - MOCHA</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#folder-format" class="md-skip">
+        <a href="#sequence-selection" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Reading
+              Preprocessing
             
           </span>
         </div>
@@ -342,6 +342,8 @@
       
         
       
+        
+      
     
     
       
@@ -404,7 +406,7 @@
           
   
   <span class="md-ellipsis">
-    Data Reading
+    Preprocessing
   </span>
   
 
@@ -415,7 +417,7 @@
         
   
   <span class="md-ellipsis">
-    Data Reading
+    Preprocessing
   </span>
   
 
@@ -435,37 +437,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#folder-format" class="md-nav__link">
+  <a href="#sequence-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Folder format
+      Sequence Selection
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Folder format">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Registration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mocha-folder" class="md-nav__link">
+  <a href="#select-reference-and-moving-sequences" class="md-nav__link">
     <span class="md-ellipsis">
-      MOCHA folder
+      Select Reference and Moving Sequences
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vesselvoyager-folder" class="md-nav__link">
+  <a href="#set-initial-alignment" class="md-nav__link">
     <span class="md-ellipsis">
-      VesselVoyager folder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2d-cascade-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D CASCADE folder
+      Set Initial Alignment
     </span>
   </a>
   
@@ -477,18 +479,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui" class="md-nav__link">
+  <a href="#automated-registration" class="md-nav__link">
     <span class="md-ellipsis">
-      GUI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quickly-open-another-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quickly open another folder
+      Automated Registration
     </span>
   </a>
   
@@ -498,6 +491,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Patient%20Folder%20Reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patient Folder Reading
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -837,37 +851,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#folder-format" class="md-nav__link">
+  <a href="#sequence-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Folder format
+      Sequence Selection
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Folder format">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Registration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Registration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mocha-folder" class="md-nav__link">
+  <a href="#select-reference-and-moving-sequences" class="md-nav__link">
     <span class="md-ellipsis">
-      MOCHA folder
+      Select Reference and Moving Sequences
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#vesselvoyager-folder" class="md-nav__link">
+  <a href="#set-initial-alignment" class="md-nav__link">
     <span class="md-ellipsis">
-      VesselVoyager folder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2d-cascade-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D CASCADE folder
+      Set Initial Alignment
     </span>
   </a>
   
@@ -879,18 +893,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui" class="md-nav__link">
+  <a href="#automated-registration" class="md-nav__link">
     <span class="md-ellipsis">
-      GUI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quickly-open-another-folder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quickly open another folder
+      Automated Registration
     </span>
   </a>
   
@@ -911,62 +916,72 @@
                   
 
 
-  <h1>Data Reading</h1>
+  <h1>Preprocessing</h1>
 
-<h2 id="folder-format">Folder format</h2>
-<p>The first step is to open a folder by the tool, such that images and contours (if exist) can be displayed.</p>
-<p>The following types of folders are supported:
-- MOCHA folder: contains NIfTI (<code>.nii.gz</code>) files of MPR (cross-sectional) images,
-- VesselVoyager folder: contains NIfTI files of 3D images and a yaml file of centerline coordinates,
-- 2D CASCADE project folder: contains DICOM, <code>.QVJ</code> and <code>.QVS</code> files.</p>
-<h3 id="mocha-folder">MOCHA folder</h3>
-<p>The folder should contain NIfTI files of MPR (cross-sectional) images. Each file is named as <code>xsec_{seq}.nii.gz</code> or <code>xsec_{whatever}_{seq}.nii.gz</code>. Here, <code>{seq}</code> is any name that indicates the MR sequence name, such as <code>S101</code> or <code>pre-T1</code>; <code>{whatever}</code> can be any name. </p>
-<div class="admonition warning">
-<p class="admonition-title">Restriction for <code>{seq}</code> and <code>{whatever}</code></p>
-<p>The only restriction: they should not contain the underline <code>_</code>. </p>
-</div>
-<p>To open a folder, click the menubar, <em>File</em> &rarr; <em>Open Xsec Folder</em>. Then select the folder you want to open. If multiple sequences are detected, a prompt window will ask you to select the sequences you want to show (figure below). By default, all sequences are selected. </p>
-<figure>
-<p><img alt="" src="../attachments/Pasted%20image%2020240213123407.png" width="200" /></p>
-</figure>
-<h3 id="vesselvoyager-folder">VesselVoyager folder</h3>
-<p>The folder should contain NIfTI files of 3D images. Each file is named as <code>{seq}.nii.gz</code>. Here, <code>{seq}</code> is any name that indicates the MR sequence name, such as <code>TOF</code>. The folder should also contain a <code>centerline.yml</code> yaml file that contains centerline information following VesselVoyager's format. </p>
-<p>To open a folder, click the menubar, <em>File</em> &rarr; <em>Open Folder</em>. Then select the folder you want to open. A prompt window (figure below) will ask for the vessels and image sequences to extract, as well as the height and width (in pixels) of the cross-sections. By default, all vessels are selected. Select what you want and click OK. Then the command line window, you can monitor the extraction progress. Note that a larger height/width results in a larger scope (ROI, view) of cross-sections, but may also cause the software to respond more slowly.</p>
-<figure>
-<p><img alt="" src="../attachments/Pasted%20image%2020240411213125.png" width="350" /></p>
-</figure>
-<p>Once the extraction is completed, each selected vessel will have a corresponding MOCHA folder named <code>{vessel}_{ID}</code> stored in the <code>xsec</code> folder in the VesselVoyager folder, where <code>{vessel}</code> is the vessel name, and <code>{ID}</code> is a unique ID for that vessel. One MOCHA folder will be automatically opened. The following things will be the same as after opening a MOCHA folder. </p>
-<h3 id="2d-cascade-folder">2D CASCADE folder</h3>
-<p>To open a 2D CASCADE folder:</p>
-<ol>
-<li>In the menubar, click <em>File</em> &rarr; <em>Open Folder</em></li>
-<li>In the pop-up window, select a CASCADE project folder, which should contains <code>QVS</code>, <code>QVJ</code> and <code>dcm</code> files. Note that you need to select the folder itself, rather than the <code>QVJ</code> file in the folder.</li>
-<li>Wait for a while, the tool will read the images and contour information, then display the images.</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">New in V1.0.1</p>
-<p>The tool support multiple project (<code>.QVJ</code>) files in the same folder. If it detects that, a pop-up window will ask the user to select one <code>QVJ</code> file to read. This is useful especially for some carotid datasets, in which there could be two <code>QVJ</code> files, for the left and right carotid arteries, respectively. </p>
-</div>
-<h2 id="gui">GUI</h2>
-<p>After opening a folder, the GUI will appear. Then you can start to use it. </p>
-<p><img alt="" src="../attachments/Pasted%20image%2020240213124252.png" /></p>
-<p>There are splitters in the software window. For example:</p>
-<figure>
-<p><img alt="" src="../attachments/Pasted%20image%2020240213154532.png" width="300" /></p>
-</figure>
-<p>You can drag them to adjust the size of different subwindows. You can even drag a splitter to make some subwindows disappear or appear again.</p>
-<h2 id="quickly-open-another-folder">Quickly open another folder</h2>
-<p>There is a folder tree on the left panel (figure below) that shows all folders at the same level of the currently opened folder. </p>
-<figure>
-<p><img alt="" src="../attachments/Pasted%20image%2020240213153828.png" width="300" /></p>
-</figure>
-<p>To quickly open one of those folders, double click the folder name. A prompt window will ask whether you want to save your changes before opening another folder. Click one of the buttons: </p>
+<p>Assume you start with raw DICOM data of multiple image sequences. This page provides instructions about necessary initial steps to preprocess the raw data.</p>
+<p>To start, load the raw data by click the button <em>File</em> &rarr; <em>Open Raw Data</em>. A prompt window will ask you to select the folder that contains those DICOM files. </p>
+<h2 id="sequence-selection">Sequence Selection</h2>
+<p>Once the folder is selected, the software starts to read the DICOMs and analyze what image sequences within. </p>
+<p>A prompt window (example shown below) will display the sequence information.</p>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601104704.png" /></p>
+<p>On the left panel, there is a table (①). Each row corresponds to one image sequence.</p>
 <ul>
-<li>Yes: save results and then close the software.</li>
-<li>No: discard unsaved results, and then close the software.</li>
-<li>Cancel: do not save results, nor close the software. In other words, nothing will happen. </li>
+<li>Column 1 (Include): whether you want to include this image sequence for further processing and analysis. By default, all sequences are included. You can uncheck the checkboxes to exclude specific sequences. </li>
+<li>Column 2 (Original Name): the original sequence names. This name is stored in the meta data of DICOM files. If you open the folder using RadiAnt, you will see the same name appears on the left panel of RadiAnt. The text in this column is not modifiable.</li>
+<li>Column 3 (New Name): The new names you want to use for each image sequence. Double click to change the text. By default, the names are the same as the original names (except that "_" in the original name will be replaced by "-"). But changing the names makes further analysis clearer, e.g., you may want to change the name of sequence 1, 2, 3 to "pre-T1", "post-T1", and "TOF", respectively. </li>
 </ul>
-<p>This is very useful if you are reviewing multiple folders, such as different vessels of the same subject from VesselVoyager. </p>
+<p>The right panel displays the image of currently selected sequence. You can change the display to another sequence by clicking its original name on the left panel. This image display helps you better identify what this sequence is. There is a small vertical line (②) below the image. Dragging it will change the slice displayed. </p>
+<p>Once you have excluded sequences you don't need, and specify new names for the sequences you want to include, click OK. A prompt window will ask you to specify a patient folder to store the results. Usually this folder should be an empty folder (you may just create an empty folder in the prompt window) for this patient. All further analysis of the patient will be performed in this folder, including centerline tracing, MPR extraction, etc. </p>
+<p>Once the patient folder is selected and the processing is done, you will see each image sequence is stored as an nii file in the folder, whose name is the new name you have specified (example shown below).</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601110701.png" width="250" /></p>
+</figure>
+<h2 id="image-registration">Image Registration</h2>
+<h3 id="select-reference-and-moving-sequences">Select Reference and Moving Sequences</h3>
+<p>Once the processing is done (the nii files are generated), the next step is image registration. A prompt window (example shown below) will automatically show to ask for registration information. If you cancelled this step by mistake or you just want to do image registration again for some specific image sequences, you can also trigger this prompt window by clicking the menubar, <em>Preprocess</em> &rarr; <em>Registration</em>.</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601111656.png" width="450" /></p>
+</figure>
+<p>Image registration is performed in a pairwise manner, namely each registration involves a reference (fixed) sequence and a moving sequence, and the registration will spatially align the moving sequence to the reference sequence by calculating a (rigid) spatial transformation. Specifying the reference and moving sequences is done by checking the checkboxes in column 2 and 3, respectively. Note that only one sequence can be selected as the reference, and all selected moving sequences will be registered to the reference. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In practice, if we have <span class="arithmatex">\(N\)</span> sequences, we usually need to do <span class="arithmatex">\(N-1\)</span> registrations. It is recommended to select TOF MRA (if available) as the reference sequence, and other <span class="arithmatex">\(N-1\)</span> sequences as the moving sequences. </p>
+</div>
+<p>The column 4 (Transform Same As) is designed for very special scenarios where some sequences may initially be registered during imaging. For example, the i2 and SNAP sequences in one single SNAP scan are usually assumed to be well registered because they are imaged together. In this case, one may want to select i2 as a moving image, and register it to the reference sequence TOF. For the other sequence SNAP, if we also select it as a moving sequence, then a separate registration will be performed between SNAP and TOF, which is not desirable. Instead, we may want to use the registration result of i2-to-TOF for SNAP-to-TOF, so that i2 and SNAP are still well registered after i2 is registered to to TOF. To this end, we need to select TOF as the reference sequence, i2 as the only one moving sequence, and then for SNAP, we select "i2" in the column 4, as shown below. This means "the spatial transformation of SNAP should be the same as the spatial transformation of i2".</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601112612.png" width="450" /></p>
+</figure>
+<h3 id="set-initial-alignment">Set Initial Alignment</h3>
+<p>Once reference and moving sequences are selected, the next prompt window (shown below) will ask you to specify initial alignment parameters. The goal of this step is to specify a 3D point (spatial location) in each sequence, so that the selected locations of different sequences will be spatially aligned before the registration is started. This initial alignment is very important. It provides a rough initial registration effect so the following iterative automated registration is easier. If initial alignment is bad (e.g., the eye of one sequence is aligned with the circle of Willis of another sequence), then the following automated registration may fail. </p>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601113811.png" /></p>
+<p>The prompt window (example above) is divided into several sub-windows, each of which corresponds to the reference sequence or a moving sequence. The components in each sub-window includes:</p>
+<ul>
+<li>① Sequence name</li>
+<li>② A red crosshair indicates the point (3D spatial location) for this sequence. </li>
+<li>③ The coordinates of the point.</li>
+<li>④ A vertical line. Drag it to change the displayed 2D slice. The red crosshair appears only if the 3D point is located in the displayed 2D slice. </li>
+<li>⑤ If the displayed slice is not the one that contains the 3D point, then clicking this button to quickly change to the slice of the 3D point. </li>
+<li>⑥ Reset the 3D point to the default location, i.e., the center of the 3D image. </li>
+</ul>
+<p>You can zoom in or out by scrolling up or down. You can click on any location of the image to change the 3D point to the clicked location. </p>
+<p>It is recommended to change the 3D points for each sequence so these points are roughly at the same anatomical structure of the patient brain. A recommended structure is the tortuous part of the right ICA (because it is easy to find), as shown below. </p>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601114514.png" /></p>
+<h2 id="automated-registration">Automated Registration</h2>
+<p>Once the points are good, click OK to proceed. The automated registration will start. It is an iterative method. A prompt window with a progress bar will show the registration progress:</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601114835.png" width="450" /></p>
+</figure>
+<p>Note that registration is sequentially performed for each moving sequence, so you may see a prompt window disappears (registration finished for current moving sequence) and another one appears (registration started for next moving sequence).  This procedure may take a few minutes.</p>
+<p>Once registration is done for all moving sequences, the results will be stored as txt files in the same patient folder:</p>
+<figure>
+<p><img alt="" src="../attachments/Pasted%20image%2020250601115008.png" width="250" /></p>
+</figure>
+<p>In the example above, since we have two moving sequences (pre-T1 and post-T1), there are two txt files storing the registration results for them separately. The name of the registration file indicates the moving sequence and reference sequence. </p>
+<p>Once registration is finished, the following steps include</p>
+<ol>
+<li>Use VesselVoyager to trace centerlines on TOF, and generate <code>centerline.yaml</code> as the result. This is detailed in the VesselVoyager document. </li>
+<li>Use MOCHA to extract the MPR views for the sequences based on the centerline files and the registration files. To read the details, go to "Patient Folder Reading" on the left table of content of this webpage, then go to the section "3D Image Folder".</li>
+</ol>
 
 
 

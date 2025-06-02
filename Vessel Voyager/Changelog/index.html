@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v311" class="md-skip">
+        <a href="#v321" class="md-skip">
           Skip to content
         </a>
       
@@ -338,6 +338,8 @@
       
         
       
+        
+      
     
     
       
@@ -386,11 +388,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MOCHA%20Viewer/Data%20Reading/" class="md-nav__link">
+      <a href="../../MOCHA%20Viewer/Preprocessing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Data Reading
+    Preprocessing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MOCHA%20Viewer/Patient%20Folder%20Reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patient Folder Reading
   </span>
   
 
@@ -735,6 +758,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v321" class="md-nav__link">
+    <span class="md-ellipsis">
+      V3.2.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320" class="md-nav__link">
+    <span class="md-ellipsis">
+      V3.2.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v311" class="md-nav__link">
     <span class="md-ellipsis">
       V3.1.1
@@ -784,6 +825,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v321" class="md-nav__link">
+    <span class="md-ellipsis">
+      V3.2.1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v320" class="md-nav__link">
+    <span class="md-ellipsis">
+      V3.2.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v311" class="md-nav__link">
     <span class="md-ellipsis">
       V3.1.1
@@ -809,6 +868,38 @@
 
   <h1>Changelog</h1>
 
+<h3 id="v321">V3.2.1</h3>
+<p>Fix bugs:
+- Fix the bug that if there are loops in centerlines, saving will raise an error.
+- Fix the bug that if one converts the centerlines to be key point based and save it, the "are_key_point_based" entry in the yaml file is still "false", causing errors when the software opens it.</p>
+<h3 id="v320">V3.2.0</h3>
+<p>Functionalities:</p>
+<ul>
+<li>Straightened window to show the longitudinal view of the centerline corresponding to a selected key point, selected curve, hovered key point or hovered curve. <ul>
+<li>A slider for rotating the view along the centerline. Hotkeys: Shift+E or Shift+Q.</li>
+<li>Increase/decease the width (size of cross-sectional images) by the "-" or "+" buttons, the same as the buttons for the cross-sectional window.</li>
+<li>Centerline key points shown in the window; click one key point to select it. </li>
+</ul>
+</li>
+<li>Convert non-key-point-based centerlines to key-point-based by clicking the menubar, "Tracing"-&gt;"To Key Point Based".</li>
+<li>Add a new vessel type to the labeling table by click the menubar, "Labeling"-&gt;"Add Vessel Type". If the new type does not have two subtypes for the left and right sides, then add it directly through the prompt window by specifying the type name and color; otherwise, check the checkbox in the prompt window, and specify the type name (e.g., M4, rather than M4_L) and color for the left side, and the side-wise subtypes will be automatically added (e.g., M4_L and M4_R), and the color of the right-side subtype (e.g., M4_R) will be a darker version of the color of the left side.  </li>
+<li>Extend the function of keys "-" and "=": if a centerline is selected, press either of them to select the first or last key point of the centerline. </li>
+<li>Pressing key "Q" or "E" has the same effect as pressing "-" or "=". </li>
+<li>Add 3D navigation mode "Fly".<ul>
+<li>Change the mode through the menubar, "File"-&gt;"Settings". (restart the software to take effect)</li>
+<li>Arrow keys, or WASD to move forward, backward, left and right; F and C keys move up and down; mouse dragging or the keys IKJL to control the pitch and yaw; space bar to brake; scroll to change moving speed; the camera auto-rotates to make the bottom point down, manual rolling can be performed using Q and E.</li>
+</ul>
+</li>
+</ul>
+<p>Bug fixes:</p>
+<ul>
+<li>Fixed the bug that if a key point position is changed by shift + click, then the point will be deselected. </li>
+<li>Fixed the bug that if the loaded image is a tif file, then changing histogram curve made 3D image totally black.</li>
+</ul>
+<p>Misc:</p>
+<ul>
+<li>Slightly increase the distance threshold for hovering key points and the curve in the histogram window to improve mouse hovering sensitivity.</li>
+</ul>
 <h3 id="v311">V3.1.1</h3>
 <p>Functionalities:</p>
 <ul>
@@ -817,7 +908,7 @@
 <li>If a key point is selected, select the previous or next key point of the same line by pressing "-" or "=".</li>
 <li>Click the vessel type text in the labeling table to show or hide the centerlines of that type. Double-click the text to only show centerlines of that type, or show centerlines of all types. The text of hidden types will be darker than the shown ones.  </li>
 </ul>
-<p>Miscs:</p>
+<p>Misc:</p>
 <ul>
 <li>Substantially optimized opening and saving speed of non-key-point-based centerline files. </li>
 <li>After using "Save As" to save the centerline results into a file, the opened file path will also be changed into that path. So the following "Save" actions will save the results to that path.</li>
